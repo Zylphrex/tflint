@@ -4,6 +4,7 @@ import (
 	"log"
 
 	"github.com/wata727/tflint/rules/awsrules"
+	"github.com/wata727/tflint/rules/gcprules"
 	"github.com/wata727/tflint/rules/terraformrules"
 	"github.com/wata727/tflint/tflint"
 )
@@ -31,6 +32,8 @@ var manualRules = []Rule{
 	awsrules.NewAwsRouteNotSpecifiedTargetRule(),
 	awsrules.NewAwsRouteSpecifiedMultipleTargetsRule(),
 	awsrules.NewAwsS3BucketInvalidACLRule(),
+	gcprules.NewGcpIAMBindingManagedOwnerRule(),
+	gcprules.NewGcpIAMPolicyManagedProject(),
 	terraformrules.NewTerraformDocumentedOutputsRule(),
 	terraformrules.NewTerraformDocumentedVariablesRule(),
 	terraformrules.NewTerraformModulePinnedSourceRule(),
